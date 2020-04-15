@@ -81,7 +81,7 @@ c.KubeSpawner.singleuser_extra_containers = [
 # and later calls against REST API don't attempt to reuse it. This is
 # just to avoid potential for any problems with connection reuse.
 
-server_url = "https://192.168.122.182"
+server_url = "https://192.168.42.12"
 auth_info_url = '%s/.well-known/oauth-authorization-server' % server_url
 
 with requests.Session() as session:
