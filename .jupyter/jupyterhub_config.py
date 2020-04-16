@@ -81,7 +81,7 @@ c.KubeSpawner.singleuser_extra_containers = [
 # and later calls against REST API don't attempt to reuse it. This is
 # just to avoid potential for any problems with connection reuse.
 
-server_url = "https://172.30.1.1"
+server_url = "https://openshift.default.svc"
 auth_info_url = '%s/.well-known/oauth-authorization-server' % server_url
 
 with requests.Session() as session:
@@ -107,7 +107,7 @@ c.JupyterHub.authenticator_class = OpenShiftOAuthenticator
 
 service_name = os.environ['JUPYTERHUB_SERVICE_NAME']
 
-service_account_name = '%s-hub' %  service_name
+service_account_name = '%s-hub' % service_name
 service_account_path = '/var/run/secrets/kubernetes.io/serviceaccount'
 
 with open(os.path.join(service_account_path, 'namespace')) as fp:
